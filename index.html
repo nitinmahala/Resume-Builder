@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Resume Builder</h1>
+    </header>
+
+    <div class="container">
+        <section class="form-section">
+            <div class="input-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" required>
+            </div>
+
+            <div class="input-group">
+                <label for="linkedin">LinkedIn URL</label>
+                <input type="url" id="linkedin">
+            </div>
+
+            <div class="input-group">
+                <label for="github">GitHub URL</label>
+                <input type="url" id="github">
+            </div>
+
+            <h2 class="section-title">Education</h2>
+            <div id="educationContainer">
+                <div class="input-group education-group">
+                    <label>Degree</label>
+                    <input type="text" class="edu-degree">
+                    <label>Institution</label>
+                    <input type="text" class="edu-institution">
+                    <label>Start Date</label>
+                    <input type="month" class="edu-start">
+                    <label>End Date</label>
+                    <input type="month" class="edu-end">
+                    <button class="btn remove-btn">Remove Education</button>
+                </div>
+            </div>
+            <button class="btn" onclick="addSection('education')">Add Education</button>
+
+            <h2 class="section-title">Work Experience</h2>
+            <div id="experienceContainer">
+                <div class="input-group experience-group">
+                    <label>Job Title</label>
+                    <input type="text" class="work-title">
+                    <label>Company</label>
+                    <input type="text" class="work-company">
+                    <label>Start Date</label>
+                    <input type="month" class="work-start">
+                    <label>End Date</label>
+                    <input type="month" class="work-end">
+                    <label>Responsibilities</label>
+                    <textarea class="work-responsibilities" rows="3"></textarea>
+                    <button class="btn remove-btn">Remove Experience</button>
+                </div>
+            </div>
+            <button class="btn" onclick="addSection('experience')">Add Experience</button>
+
+            <h2 class="section-title">Certificates</h2>
+            <div id="certificatesContainer">
+                <div class="input-group certificate-group">
+                    <label>Certificate Name</label>
+                    <input type="text" class="cert-name">
+                    <label>Issuing Organization</label>
+                    <input type="text" class="cert-org">
+                    <label>Issue Date</label>
+                    <input type="month" class="cert-date">
+                    <button class="btn remove-btn">Remove Certificate</button>
+                </div>
+            </div>
+            <button class="btn" onclick="addSection('certificate')">Add Certificate</button>
+
+            <h2 class="section-title">Achievements</h2>
+            <div id="achievementsContainer">
+                <div class="input-group achievement-group">
+                    <label>Achievement Description</label>
+                    <textarea class="achievement-desc" rows="2"></textarea>
+                    <button class="btn remove-btn">Remove Achievement</button>
+                </div>
+            </div>
+            <button class="btn" onclick="addSection('achievement')">Add Achievement</button>
+
+            <h2 class="section-title">Skills</h2>
+            <div class="input-group">
+                <label>Add Skills</label>
+                <input type="text" id="skillsInput" placeholder="Type skill and press Enter" list="skillsList">
+                <datalist id="skillsList"></datalist>
+                <div id="skillsContainer" class="skills-container"></div>
+            </div>
+
+            <div class="input-group">
+                <button class="btn" onclick="exportPDF()">Export PDF</button>
+                <button class="btn" onclick="saveData()">Save Progress</button>
+                <button class="btn" onclick="resetForm()">Reset</button>
+            </div>
+        </section>
+
+        <section class="preview-section" id="resumePreview">
+            <div class="preview-header">
+                <h1 id="previewName">John Doe</h1>
+                <div id="previewContact" class="contact-info"></div>
+                <div class="social-links" id="socialLinks"></div>
+            </div>
+            
+            <div class="preview-content" id="previewContent">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        Resume Builder By Nitin Mahala
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
